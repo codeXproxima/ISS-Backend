@@ -23,10 +23,10 @@ app.get("/", (req, res) => {
   res.send("working");
 });
 
-if (env === "Dev") {
+if (env === "Prod") {
+  app.listen();
+} else {
   app.listen(port, () => {
     console.log(`server is listing on port: http://localhost:${port}`);
   });
-} else {
-  app.listen();
 }
